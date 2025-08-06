@@ -1,0 +1,79 @@
+.section--before-after {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.before-after-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.before-after-wrap {
+  width: 100%;
+  position: relative;
+}
+.dragger {
+  z-index: 2;
+  width: 2px;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 50%;
+  right: auto;
+}
+.dragger-inner {
+  width: 1rem;
+  height: 5rem;
+  background-color: #ffffff;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  box-shadow: inset 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+  border: 2px solid #fff;
+}
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-wrap.is-before {
+  aspect-ratio: 16 / 9;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.img-wrap.is-after {
+  aspect-ratio: 16 / 9;
+  -webkit-clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 50% 0 0);
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+
+.img.is-before-after {
+  object-fit: cover;
+  object-position: 50% 40%;
+  position: absolute;
+}
+.img-wrap img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+}
